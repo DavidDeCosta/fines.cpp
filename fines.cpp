@@ -3,6 +3,7 @@
 //date of last modification: <February 23, 2021>
 
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 //prototype
@@ -31,6 +32,14 @@ int main(){
         }
 
     }
+
+
+
+    cout << "Speed Limit" << setw(22) << "Measured Speed" << setw(19) <<  "Fine Amount" << endl;
+    cout << setw(6) << speed_Limit << setw(20) << measured_Speed << setw(18) << fine_Amount;
+
+
+
     return 0;
 }
 
