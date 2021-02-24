@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <iomanip>
+#include <climits>
 using namespace std;
 
 //prototype
@@ -12,10 +13,11 @@ void print_data(int speed_Limit, int measured_Speed, int fine_Amount);
 
 int main(){
 
-    int speed_Limit, measured_Speed, fine_Amount;
+    int speed_Limit, measured_Speed, fine_Amount, number_Of_Fines = 0;
 
-    cout << "What was the speed limit? \n";
+    cout << "What was the speed limit?(-1 to end) \n"; // -1 is the sentinel value
     cin >> speed_Limit; //prime read
+
     while(speed_Limit != -1){
         if(speed_Limit > 0 && speed_Limit < 75){
             cout << "What was your measured speed? \n";
@@ -25,16 +27,20 @@ int main(){
             cout << "Enter the speed limit again. Was not between (0-75)\n";
         }
         if(measured_Speed <=150 && measured_Speed > 0){
+            if(measured_Speed > speed_Limit && speed_Limit != -1){
+            fine_calculation(speed_Limit, measured_Speed);
+            number_Of_Fines++;
+        }
             cout << "What was the speed limit? \n";
             cin >> speed_Limit;
         }
         else{
             cout << "Enter the Measured Speed again. Was not between (0-150) \n";
         }
-
     }
 
     print_data(speed_Limit,measured_Speed,fine_Amount);
+    cout << endl << "Total Number of Fines: "<< number_Of_Fines;
 
 
 
@@ -65,6 +71,7 @@ int fine_calculation(int speed_Limit, int measured_Speed){
 
 }
 
+//This function prints out the Data: Speed Limit, Measured Speed, and Fine Amount
 
 void print_data(int speed_Limit, int measured_Speed, int fine_Amount){
 
