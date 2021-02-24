@@ -8,6 +8,7 @@ using namespace std;
 
 //prototype
 int fine_calculation(int speedLimit, int speedMeasured);
+void print_data(int speed_Limit, int measured_Speed, int fine_Amount);
 
 int main(){
 
@@ -33,10 +34,9 @@ int main(){
 
     }
 
+    print_data(speed_Limit,measured_Speed,fine_Amount);
 
 
-    cout << "Speed Limit" << setw(22) << "Measured Speed" << setw(19) <<  "Fine Amount" << endl;
-    cout << setw(6) << speed_Limit << setw(20) << measured_Speed << setw(18) << fine_Amount;
 
 
 
@@ -64,3 +64,12 @@ int fine_calculation(int speed_Limit, int measured_Speed){
     return total_fine;
 
 }
+
+
+void print_data(int speed_Limit, int measured_Speed, int fine_Amount){
+
+    cout << "Speed Limit" << setw(22) << "Measured Speed" << setw(19) <<  "Fine Amount" << endl;
+    cout << setw(6) << speed_Limit << setw(20) << measured_Speed << setw(18) << fine_Amount;
+
+}
+
