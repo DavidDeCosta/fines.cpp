@@ -15,7 +15,7 @@ int main(){
 
     int speed_Limit, measured_Speed, largest_Fine = 0, fine_Amount, number_Of_Fines = 0;
     int totalFineAmount = 0;
-    int largestFine = INT_MIN;
+    int largestFine = INT_MIN; //sets the smallest possible int value to largestFine variable
 
     cout << "What was the speed limit?(-1 to end) \n"; // -1 is the sentinel value
     cin >> speed_Limit; //prime read
@@ -30,12 +30,12 @@ int main(){
         }
         if(measured_Speed <=150 && measured_Speed > 0){
             if(measured_Speed > speed_Limit && speed_Limit != -1){
-            fine_Amount = fine_calculation(speed_Limit, measured_Speed);
-            print_data(speed_Limit,measured_Speed,fine_Amount);
-            totalFineAmount += fine_Amount;
+            fine_Amount = fine_calculation(speed_Limit, measured_Speed); //stores the fine calculation result in the variable fine amount
+            print_data(speed_Limit,measured_Speed,fine_Amount); //prints the speed limit, measured speed, and fine amount to console
+            totalFineAmount += fine_Amount; //this adds the fine amount to the total fine variable
             cout << endl;
-            number_Of_Fines++;
-            if(fine_Amount > largest_Fine){
+            number_Of_Fines++; //this increments the number of fines by 1 with each pass
+            if(fine_Amount > largest_Fine){ //this determines if the fine amount is larger then the previous and then assigns it to largest fine if true
                 largest_Fine = fine_Amount;
             }
         }
