@@ -1,4 +1,5 @@
-//<Calculating a fine based on the users speed measured and speedlimit.>
+/*< This program calculates a fine based on the users measured speed and speedlimit. It then will display the total number of fines as 
+    well as the largest fine and average fine amount.> */
 //programmer : <David DeCosta>
 //date of last modification: <February 26, 2021>
 
@@ -49,8 +50,6 @@ int main(){
     float average_Fine_Amount = float(totalFineAmount)/number_Of_Fines;
 
 
-
-    cout << endl;
     cout << endl << "Total Number of Fines: "<< number_Of_Fines << endl;
     cout << "Largest Fine: $" << largest_Fine << endl;
     cout << "Average Fine Amount: $" << fixed << setprecision(2) << average_Fine_Amount << endl;
@@ -86,7 +85,7 @@ int fine_calculation(int speed_Limit, int measured_Speed){
 void print_data(int speed_Limit, int measured_Speed, int fine_Amount){
 
     cout << "Speed Limit" << setw(22) << "Measured Speed" << setw(19) <<  "Fine Amount" << endl;
-    cout << setw(6) << speed_Limit << setw(20) << measured_Speed << setw(18) << fine_Amount;
+    cout << setw(6) << speed_Limit << setw(20) << measured_Speed << setw(18) << "$" << fine_Amount;
 
 }
 
