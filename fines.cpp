@@ -31,7 +31,7 @@ int main(){
         if(measured_Speed <=150 && measured_Speed > 0){
             if(measured_Speed > speed_Limit && speed_Limit != -1){
             fine_Amount = fine_calculation(speed_Limit, measured_Speed); //stores the fine calculation result in the variable fine amount
-            print_data(speed_Limit,measured_Speed,fine_Amount); //prints the speed limit, measured speed, and fine amount to console
+            print_data(speed_Limit,measured_Speed,fine_Amount); //calls the function print_data to display each value
             totalFineAmount += fine_Amount; //this adds the fine amount to the total fine variable
             cout << endl;
             number_Of_Fines++; //this increments the number of fines by 1 with each pass
