@@ -1,6 +1,6 @@
 //<Calculating a fine based on the users speed measured and speedlimit.>
 //programmer : <David DeCosta>
-//date of last modification: <February 23, 2021>
+//date of last modification: <February 26, 2021>
 
 #include <iostream>
 #include <iomanip>
@@ -45,10 +45,6 @@ int main(){
     cout << endl << "Total Number of Fines: "<< number_Of_Fines << endl;
     cout << "Largest Fine: " << largest_Fine << endl;
     cout << "Average Fine Amount: " << average_Fine_Amount << endl;
-
-
-
-
 
     return 0;
 }
