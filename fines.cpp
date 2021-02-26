@@ -13,7 +13,8 @@ void print_data(int speed_Limit, int measured_Speed, int fine_Amount);
 
 int main(){
 
-    int speed_Limit, measured_Speed, fine_Amount, number_Of_Fines = 0;
+    int speed_Limit, measured_Speed, largest_Fine = 0, fine_Amount, number_Of_Fines = 0;
+    float average_Fine_Amount = 0;
 
     cout << "What was the speed limit?(-1 to end) \n"; // -1 is the sentinel value
     cin >> speed_Limit; //prime read
@@ -28,7 +29,7 @@ int main(){
         }
         if(measured_Speed <=150 && measured_Speed > 0){
             if(measured_Speed > speed_Limit && speed_Limit != -1){
-            fine_calculation(speed_Limit, measured_Speed);
+            fine_Amount = fine_calculation(speed_Limit, measured_Speed);
             number_Of_Fines++;
         }
             cout << "What was the speed limit? \n";
@@ -40,7 +41,10 @@ int main(){
     }
 
     print_data(speed_Limit,measured_Speed,fine_Amount);
-    cout << endl << "Total Number of Fines: "<< number_Of_Fines;
+    cout << endl;
+    cout << endl << "Total Number of Fines: "<< number_Of_Fines << endl;
+    cout << "Largest Fine: " << largest_Fine << endl;
+    cout << "Average Fine Amount: " << average_Fine_Amount << endl;
 
 
 
